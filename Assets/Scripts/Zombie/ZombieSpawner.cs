@@ -40,9 +40,7 @@ public class ZombieSpawner : MonoBehaviour
 
 	private IEnumerator Intermission()
 	{
-		print("Intermission");
 		yield return new WaitForSeconds(5f);
-		print("Intermission complete");
 	}
 
 	private void SpawnZombie()
@@ -50,7 +48,7 @@ public class ZombieSpawner : MonoBehaviour
 		Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 		GameObject zombie = zombies[Random.Range(0, zombies.Length)];
 
-		Instantiate(zombie, spawnPoint.position, spawnPoint.rotation);
+		Instantiate(zombie, spawnPoint.position, spawnPoint.rotation, this.transform);		
 
 		UIManager.instance.UpdateZombiesRemainingText();
 	}

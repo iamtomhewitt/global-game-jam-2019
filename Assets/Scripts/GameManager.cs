@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
 			if (GameObject.FindGameObjectsWithTag("Zombie").Length == 0)
 			{
 				//print("Spawning a new wave from the Game Manager");
-				zombieSpawner.waveSize += 3;
-				zombieSpawner.spawnRate -= .25f;
+				zombieSpawner.waveSize += 1;
+				zombieSpawner.spawnRate -= .15f;
 				zombieSpawner.SpawnWave();
 			}
 			//else

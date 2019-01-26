@@ -19,6 +19,6 @@ public class WeaponSpawner : MonoBehaviour
 		GameObject w = weaponPickups[Random.Range(0, weaponPickups.Length)];
 		Transform s = spawns[Random.Range(0, spawns.Length)];
 
-		Instantiate(w, s.position, s.rotation);
+		Instantiate(w, s.position, s.rotation, this.transform);
 	}
 }
