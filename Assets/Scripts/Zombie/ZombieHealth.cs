@@ -10,7 +10,7 @@ public class ZombieHealth : MonoBehaviour
 
 	public GameObject deathEffect;
 
-	public void DecreaseHealth(int amount)
+	public void DecreaseHealth(int amount, bool killedByPlayer)
 	{
 		health -= amount;
 
@@ -18,7 +18,7 @@ public class ZombieHealth : MonoBehaviour
 
 		if (health <= 0)
 		{
-			Die();
+			Die(killedByPlayer);
 		}
 	}
 
@@ -27,11 +27,11 @@ public class ZombieHealth : MonoBehaviour
 		switch (other.gameObject.tag)
 		{
 			case "Bullet":
-				DecreaseHealth(50);
+				DecreaseHealth(50, true);
 				break;
 
 			case "Zombie Destination":
-				DecreaseHealth(100);
+				DecreaseHealth(100, false);
 				other.gameObject.GetComponent<HouseHealth>().DecreaseHealth(5);
 				break;
 
@@ -41,10 +41,21 @@ public class ZombieHealth : MonoBehaviour
 		}
 	}
 
-	private void Die()
+	private void Die(bool killedByPlayer)
 	{
 		CameraController.instance.ShakeCamera(.25f, .15f);
 		Instantiate(deathEffect, transform.position, transform.rotation);
 		Destroy(this.gameObject);
+
+		UIManager.instance.UpdateZombiesRemainingText();
+
+		if (killedByPlayer)
+		{
+			PlayerScore.instance.AddScore(50);
+			PlayerScore.instance.AddZombieKilled();
+
+			UIManager.instance.UpdateScoreText(PlayerScore.instance.GetScore());
+			UIManager.instance.UpdateZombiesKilledText(PlayerScore.instance.GetZombiesKilled());
+		}
 	}
 }

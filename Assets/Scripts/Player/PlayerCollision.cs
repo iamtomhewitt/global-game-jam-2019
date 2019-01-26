@@ -15,11 +15,11 @@ public class PlayerCollision : MonoBehaviour
 				switch (weaponPickup.type)
 				{
 					case WeaponType.MachineGun:
-						GetComponent<PlayerShoot>().setCurrentWeaponForTime("Machine Gun", 5f);
+						GetComponent<PlayerShoot>().setCurrentWeaponForTime("Machine Gun", 10f);
 						break;
 
 					case WeaponType.TripleGun:
-						GetComponent<PlayerShoot>().setCurrentWeapon("Triple Gun");
+						GetComponent<PlayerShoot>().setCurrentWeaponForTime("Triple Gun", 10f);
 						break;
 				}
 

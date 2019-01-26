@@ -44,5 +44,7 @@ public class ZombieSpawner : MonoBehaviour
 		GameObject zombie = zombies[Random.Range(0, zombies.Length)];
 
 		Instantiate(zombie, spawnPoint.position, spawnPoint.rotation);
+
+		UIManager.instance.UpdateZombiesRemainingText();
 	}
 }

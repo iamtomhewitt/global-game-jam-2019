@@ -21,13 +21,13 @@ public class GameManager : MonoBehaviour
 		{
 			if (GameObject.FindGameObjectsWithTag("Zombie").Length == 0)
 			{
-				print("Spawning a new wave from the Game Manager");
+				//print("Spawning a new wave from the Game Manager");
 				zombieSpawner.waveSize += 3;
 				zombieSpawner.spawnRate -= .25f;
 				zombieSpawner.SpawnWave();
 			}
-			else
-				print("Cannot start the next wave as there are still zombies alive!");
+			//else
+				//print("Cannot start the next wave as there are still zombies alive!");
 		}
 	}
 }

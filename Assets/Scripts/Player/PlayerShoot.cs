@@ -49,7 +49,9 @@ public class PlayerShoot : MonoBehaviour
 
 	public void setCurrentWeaponForTime(string weaponName, float duration)
 	{
-		StopAllCoroutines();
+		print("Stopping coroutine");
+		StopCoroutine("setCurrentWeaponForDuration");
+		print("starting new coroutine ");
 		StartCoroutine(setCurrentWeaponForDuration(weaponName, duration));
 	}
 
