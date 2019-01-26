@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 				//print("Spawning a new wave from the Game Manager");
 				ZombieSpawner.instance.waveSize += 3;
 				ZombieSpawner.instance.spawnRate -= .1f;
-				if (ZombieSpawner.instance.spawnRate < 0.75f) ZombieSpawner.instance.spawnRate = 0.75f
+				if (ZombieSpawner.instance.spawnRate < 0.75f) ZombieSpawner.instance.spawnRate = 0.75f;
 				ZombieSpawner.instance.SpawnWave();
 			}
 			//else

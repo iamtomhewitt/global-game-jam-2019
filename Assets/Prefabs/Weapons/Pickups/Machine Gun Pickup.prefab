@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 3806846819632769752}
   - component: {fileID: 3806846819632769755}
   - component: {fileID: 3806846819632769753}
+  - component: {fileID: 4827288180311914766}
   m_Layer: 0
   m_Name: Machine Gun Pickup
   m_TagString: Weapon Pickup
@@ -137,3 +138,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6241772, y: 0.74659157, z: 0.3175763}
   m_Center: {x: 0, y: 0.12670422, z: 0}
+--- !u!95 &4827288180311914766
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806846819632769754}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9279e5ed362184e488d77c779e31ef48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -15,12 +15,12 @@ public class PlayerCollision : MonoBehaviour
 				switch (weaponPickup.type)
 				{
 					case WeaponType.MachineGun:
-						PlayerWeaponManager.instance.FindWeapon("Machine Gun").ammo += 100;
+						PlayerWeaponManager.instance.FindWeapon("Machine Gun").ammo += 75;
 						UIManager.instance.UpdateWeaponAmmoText(PlayerWeaponManager.instance.FindWeapon("Machine Gun").ammo);
 						break;
 
 					case WeaponType.TripleGun:
-						PlayerWeaponManager.instance.FindWeapon("Triple Gun").ammo += 120;
+						PlayerWeaponManager.instance.FindWeapon("Triple Gun").ammo += 90;
 						UIManager.instance.UpdateWeaponAmmoText(PlayerWeaponManager.instance.FindWeapon("Triple Gun").ammo);
 						break;
 				}
