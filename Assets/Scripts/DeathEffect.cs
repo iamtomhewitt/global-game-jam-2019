@@ -14,7 +14,7 @@ public class DeathEffect : MonoBehaviour
 			Rigidbody rb = g.GetComponent<Rigidbody>();
 			Vector3 torque = new Vector3(Random.Range(-180, 180), Random.Range(-180, 180), Random.Range(-180, 180));
 			rb.AddForce(transform.up * force, ForceMode.Impulse);
-			rb.AddTorque(torque);
+			rb.AddTorque(torque,ForceMode.Impulse);
 		}
 
 		StartCoroutine(Shrink());

@@ -10,6 +10,6 @@ public class ZombieMovement : MonoBehaviour
 	private void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
-		agent.SetDestination(GameObject.Find("Zombie Destination").transform.position);
+		agent.SetDestination(GameObject.FindGameObjectWithTag("Zombie Destination").transform.position);
 	}
 }
