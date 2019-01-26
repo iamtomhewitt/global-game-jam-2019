@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zombie Destination
   - Bullet
+  - Zombie
   layers:
   - Default
   - TransparentFX
