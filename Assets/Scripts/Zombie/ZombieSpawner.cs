@@ -7,11 +7,35 @@ public class ZombieSpawner : MonoBehaviour
 	public GameObject[] zombies;
 	public Transform[] spawnPoints;
 
-	public float spawnRate;
+	public int waveSize = 5;
+	public float spawnRate = 5;
 
-	private void Start()
+	public bool finishedSpawningWave;
+
+	public void SpawnWave()
 	{
-		InvokeRepeating("SpawnZombie", 3, spawnRate);
+		StartCoroutine(WaveSpawn());
+	}
+
+	private IEnumerator WaveSpawn()
+	{
+		finishedSpawningWave = false;
+		yield return Intermission();
+
+		for (int i = 0; i < waveSize; i++)
+		{
+			yield return new WaitForSeconds(spawnRate);
+			SpawnZombie();
+		}
+
+		finishedSpawningWave = true;
+	}
+
+	private IEnumerator Intermission()
+	{
+		print("Intermission");
+		yield return new WaitForSeconds(5f);
+		print("Intermission complete");
 	}
 
 	private void SpawnZombie()

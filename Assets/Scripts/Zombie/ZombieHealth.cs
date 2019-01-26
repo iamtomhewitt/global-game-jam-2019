@@ -36,14 +36,13 @@ public class ZombieHealth : MonoBehaviour
 				break;
 
 			default:
-				Debug.LogWarning("Unrecognised tag: " + other.gameObject.name);
+				//Debug.LogWarning("Unrecognised tag: " + other.gameObject.name);
 				break;
 		}
 	}
 
 	private void Die()
 	{
-		print("Zombie is DEAD!");
 		CameraController.instance.ShakeCamera(.25f, .15f);
 		Instantiate(deathEffect, transform.position, transform.rotation);
 		Destroy(this.gameObject);
