@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
 	public float health = 100;
 	public Image healthBar;
 
+	public GameObject deathEffect;
+
 	public void DecreaseHealth(int amount)
 	{
 		health -= amount;
@@ -36,8 +38,9 @@ public class PlayerHealth : MonoBehaviour
 
 	private void Die()
 	{
-		print("YOU is DEAD!");
 		CameraController.instance.ShakeCamera(.25f, .15f);
+		Instantiate(deathEffect, transform.position, transform.rotation);
 		Destroy(this.gameObject);
+		GameManager.instance.GameOver();
 	}
 }

@@ -12,6 +12,13 @@ public class ZombieSpawner : MonoBehaviour
 
 	public bool finishedSpawningWave;
 
+	public static ZombieSpawner instance;
+
+	private void Awake()
+	{
+		instance = this;
+	}
+
 	public void SpawnWave()
 	{
 		StartCoroutine(WaveSpawn());

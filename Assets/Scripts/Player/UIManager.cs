@@ -12,9 +12,18 @@ public class UIManager : MonoBehaviour
 
 	public static UIManager instance;
 
+	public Animator animator;
+	public AnimationClip underAttack;
+	public AnimationClip gameOver;
+
 	private void Awake()
 	{
 		instance = this;
+	}
+
+	private void Update()
+	{
+		UpdateZombiesRemainingText();
 	}
 
 	public void UpdateScoreText(int score)
@@ -33,8 +42,13 @@ public class UIManager : MonoBehaviour
 		zombiesRemainingText.SetText("REMAINING: " + remaining);
 	}
 
-	private void Update()
+	public void ShowHouseUnderAttack()
 	{
-		UpdateZombiesRemainingText();
+		animator.Play(underAttack.name, -1, 0f);
+	}
+
+	public void ShowGameOver()
+	{
+		animator.Play(gameOver.name, -1, 0f);
 	}
 }

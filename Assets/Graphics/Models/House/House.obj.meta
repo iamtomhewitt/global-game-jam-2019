@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: ca285c96052222b4696d84f4f21e412f
+guid: c53211b4d58f45243983f2364381edc8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: House
-    100002: //RootNode
-    400000: House
-    400002: //RootNode
-    2100000: palette
-    2300000: House
-    3300000: House
-    4300000: House
-  externalObjects: {}
+    100000: //RootNode
+    100002: House_Project
+    400000: //RootNode
+    400002: House_Project
+    2100000: House_ProjectMat
+    2300000: House_Project
+    3300000: House_Project
+    4300000: House_Project
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_ProjectMat
+    second: {fileID: 2100000, guid: 2bf06dbcb86360a4395929de3b34a4ca, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

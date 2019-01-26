@@ -14,6 +14,8 @@ public class HouseHealth : MonoBehaviour
 
 		healthBar.fillAmount = health / 100;
 
+		UIManager.instance.ShowHouseUnderAttack();
+
 		if (health <= 0)
 		{
 			Die();
