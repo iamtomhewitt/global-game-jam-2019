@@ -21469,7 +21469,7 @@ PrefabInstance:
     - target: {fileID: 896975999967653715, guid: ee5758c6b8eac2a44ba3377375dbd1ef,
         type: 3}
       propertyPath: startingWeapon
-      value: Shotgun
+      value: Machine Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee5758c6b8eac2a44ba3377375dbd1ef, type: 3}
