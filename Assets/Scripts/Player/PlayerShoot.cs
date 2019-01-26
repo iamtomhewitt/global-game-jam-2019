@@ -20,9 +20,12 @@ public class PlayerShoot : MonoBehaviour
 
 	private Rigidbody rb;
 
+	private Weapon currentWeapon;
+
 	private void Start()
 	{
 		muzzleFlash.SetActive(false);
+		currentWeapon = GetComponent<PlayerWeaponManager>().SwitchWeapon("Shotgun");
 		rb = GetComponent<Rigidbody>();
 	}
 
@@ -30,32 +33,10 @@ public class PlayerShoot : MonoBehaviour
 	{
 		cooldown -= Time.deltaTime;
 
-		if (Input.GetAxis("RightTrigger") >= 0.95f && cooldown <= 0)
+		if (Input.GetAxis("RightTrigger") >= 0.95f && currentWeapon.GetCooldown() <= 0)
 		{
-			Shoot();
-			StartCoroutine(MuzzleFlash());
+			currentWeapon.Shoot();
+			rb.AddForce(-transform.forward * currentWeapon.recoil, ForceMode.Impulse);
 		}
-	}
-
-	private void Shoot()
-	{
-		cooldown = fireRate;
-
-		GameObject b = Instantiate(bullet, spawn.position, spawn.rotation) as GameObject;
-		b.GetComponent<Rigidbody>().AddForce(b.transform.forward * bulletForce, ForceMode.Impulse);
-
-		GameObject s = Instantiate(shotgunShell, shotgunShellSpawn.position, shotgunShellSpawn.rotation) as GameObject;
-		s.GetComponent<Rigidbody>().AddForce(s.transform.right * shotgunShellForce, ForceMode.Impulse);
-		s.GetComponent<Rigidbody>().AddTorque(Random.insideUnitSphere * Random.Range(0, shotgunShellForce*2));
-		Destroy(s.gameObject, 5f);
-
-		rb.AddForce(-transform.forward * recoil, ForceMode.Impulse);
-	}
-
-	private IEnumerator MuzzleFlash()
-	{
-		muzzleFlash.SetActive(true);
-		yield return new WaitForSeconds(.05f);
-		muzzleFlash.SetActive(false);
 	}
 }
