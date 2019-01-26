@@ -16,6 +16,8 @@ public class PlayerShoot : MonoBehaviour
 	public float shotgunShellForce;
 	public float recoil;
 
+	public string startingWeapon;
+
 	private float cooldown;
 
 	private Rigidbody rb;
@@ -25,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
 	private void Start()
 	{
 		muzzleFlash.SetActive(false);
-		currentWeapon = GetComponent<PlayerWeaponManager>().SwitchWeapon("Shotgun");
+		currentWeapon = GetComponent<PlayerWeaponManager>().SwitchWeapon(startingWeapon);
 		rb = GetComponent<Rigidbody>();
 	}
 

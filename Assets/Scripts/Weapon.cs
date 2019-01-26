@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
 	public GameObject shell;
 	public GameObject muzzleFlash;
 
-	public Transform bulletSpawn;
+	public Transform[] bulletSpawns;
 	public Transform shellSpawn;
 
 	public float fireRate;
@@ -32,8 +32,12 @@ public class Weapon : MonoBehaviour
 		{
 			StartCoroutine(MuzzleFlash());
 			cooldown = fireRate;
-			GameObject b = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation) as GameObject;
-			b.GetComponent<Rigidbody>().AddForce(b.transform.forward * bulletForce, ForceMode.Impulse);
+
+			foreach (Transform spawn in bulletSpawns)
+			{
+				GameObject b = Instantiate(bullet, spawn.position, spawn.rotation) as GameObject;
+				b.GetComponent<Rigidbody>().AddForce(b.transform.forward * bulletForce, ForceMode.Impulse);
+			}
 
 			GameObject s = Instantiate(shell, shellSpawn.position, shellSpawn.rotation) as GameObject;
 			s.GetComponent<Rigidbody>().AddForce(s.transform.right * shellForce, ForceMode.Impulse);
