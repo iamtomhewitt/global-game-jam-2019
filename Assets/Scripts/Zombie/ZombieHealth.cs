@@ -25,7 +25,7 @@ public class ZombieHealth : MonoBehaviour
 		switch (other.gameObject.tag)
 		{
 			case "Bullet":
-				DecreaseHealth(40);
+				DecreaseHealth(50);
 				break;
 
 			case "Zombie Destination":

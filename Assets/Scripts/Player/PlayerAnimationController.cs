@@ -6,7 +6,6 @@ public class PlayerAnimationController : AnimationController
 {
 	public AnimationClip idle;
 	public AnimationClip run;
-	public AnimationClip groundPound;
 
 	public const int ANIMATION_IDLE = 0;
 	public const int ANIMATION_RUN = 1;

@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour
 {
 	public GameObject bullet;
 	public GameObject shotgunShell;
+	public GameObject muzzleFlash;
 
 	public Transform spawn;
 	public Transform shotgunShellSpawn;
@@ -21,6 +22,7 @@ public class PlayerShoot : MonoBehaviour
 
 	private void Start()
 	{
+		muzzleFlash.SetActive(false);
 		rb = GetComponent<Rigidbody>();
 	}
 
@@ -31,6 +33,7 @@ public class PlayerShoot : MonoBehaviour
 		if (Input.GetAxis("RightTrigger") >= 0.95f && cooldown <= 0)
 		{
 			Shoot();
+			StartCoroutine(MuzzleFlash());
 		}
 	}
 
@@ -47,5 +50,12 @@ public class PlayerShoot : MonoBehaviour
 		Destroy(s.gameObject, 5f);
 
 		rb.AddForce(-transform.forward * recoil, ForceMode.Impulse);
+	}
+
+	private IEnumerator MuzzleFlash()
+	{
+		muzzleFlash.SetActive(true);
+		yield return new WaitForSeconds(.05f);
+		muzzleFlash.SetActive(false);
 	}
 }
