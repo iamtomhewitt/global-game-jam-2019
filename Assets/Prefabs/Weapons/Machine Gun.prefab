@@ -214,6 +214,7 @@ MonoBehaviour:
   recoil: 0
   cameraShakeIntensity: 0.1
   cameraShakeDuration: 0.2
+  ammo: 100
 --- !u!1 &1757084251463112192
 GameObject:
   m_ObjectHideFlags: 0

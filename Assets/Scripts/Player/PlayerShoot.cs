@@ -24,11 +24,14 @@ public class PlayerShoot : MonoBehaviour
 
 	private Weapon currentWeapon;
 
+	private PlayerWeaponManager weaponManager;
+
 	private void Start()
 	{
+		weaponManager = GetComponent<PlayerWeaponManager>();
+		rb = GetComponent<Rigidbody>();
 		muzzleFlash.SetActive(false);
 		setCurrentWeapon(startingWeapon);
-		rb = GetComponent<Rigidbody>();
 	}
 
 	private void Update()
@@ -40,25 +43,15 @@ public class PlayerShoot : MonoBehaviour
 			currentWeapon.Shoot();
 			rb.AddForce(-transform.forward * currentWeapon.recoil, ForceMode.Impulse);
 		}
+
+		if (Input.GetButtonDown("YButton"))
+		{
+			currentWeapon = weaponManager.SwitchToNextWeapon();
+		}
 	}
 
 	public void setCurrentWeapon(string weaponName)
 	{
-		currentWeapon = GetComponent<PlayerWeaponManager>().SwitchWeapon(weaponName);
-	}
-
-	public void setCurrentWeaponForTime(string weaponName, float duration)
-	{
-		print("Stopping coroutine");
-		StopCoroutine("setCurrentWeaponForDuration");
-		print("starting new coroutine ");
-		StartCoroutine(setCurrentWeaponForDuration(weaponName, duration));
-	}
-
-	private IEnumerator setCurrentWeaponForDuration(string weaponName, float duration)
-	{
-		setCurrentWeapon(weaponName);
-		yield return new WaitForSeconds(duration);
-		setCurrentWeapon(startingWeapon);
+		currentWeapon = weaponManager.SwitchToSpecificWeapon(weaponName);
 	}
 }

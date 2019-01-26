@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
 	public TextMeshProUGUI scoreText;
 	public TextMeshProUGUI zombiesKilledText;
 	public TextMeshProUGUI zombiesRemainingText;
+	public TextMeshProUGUI weaponNameText;
+	public TextMeshProUGUI weaponAmmoText;
 
 	public static UIManager instance;
 
@@ -40,6 +42,16 @@ public class UIManager : MonoBehaviour
 	{
 		int remaining = GameObject.FindGameObjectsWithTag("Zombie").Length;
 		zombiesRemainingText.SetText("REMAINING: " + remaining);
+	}
+
+	public void UpdateWeaponNameText(string weaponName)
+	{
+		weaponNameText.SetText(weaponName.ToUpper());
+	}
+
+	public void UpdateWeaponAmmoText(int ammo)
+	{
+		weaponAmmoText.SetText(""+ammo);
 	}
 
 	public void ShowHouseUnderAttack()

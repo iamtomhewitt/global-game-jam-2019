@@ -27,6 +27,9 @@ public class PlayerScore : MonoBehaviour
 	public void AddZombieKilled()
 	{
 		zombiesKilled++;
+
+		if (zombiesKilled % 35 == 0)
+			WeaponSpawner.instance.SpawnWeapon();
 	}
 
 	public int GetZombiesKilled()

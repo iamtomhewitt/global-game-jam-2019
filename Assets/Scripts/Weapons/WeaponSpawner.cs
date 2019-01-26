@@ -7,15 +7,16 @@ public class WeaponSpawner : MonoBehaviour
 	public GameObject[] weaponPickups;
 	public Transform[] spawns;
 
-	public float spawnTime;
+	public static WeaponSpawner instance;
 
-	private void Start()
+	private void Awake()
 	{
-		InvokeRepeating("SpawnWeapon", spawnTime, spawnTime);
+		instance = this;
 	}
 
-	private void SpawnWeapon()
+	public void SpawnWeapon()
 	{
+		print("Spawning weapon!");
 		GameObject w = weaponPickups[Random.Range(0, weaponPickups.Length)];
 		Transform s = spawns[Random.Range(0, spawns.Length)];
 

@@ -19,6 +19,8 @@ public class Weapon : MonoBehaviour
 	public float recoil;
 	public float cameraShakeIntensity, cameraShakeDuration;
 
+	public int ammo;
+
 	private float cooldown;
 
 	public void Start()
@@ -28,7 +30,7 @@ public class Weapon : MonoBehaviour
 
 	public void Shoot()
 	{
-		if (cooldown <= 0f)
+		if (cooldown <= 0f && ammo > 0)
 		{
 			StartCoroutine(MuzzleFlash());
 			cooldown = fireRate;
@@ -37,6 +39,8 @@ public class Weapon : MonoBehaviour
 			{
 				GameObject b = Instantiate(bullet, spawn.position, spawn.rotation) as GameObject;
 				b.GetComponent<Rigidbody>().AddForce(b.transform.forward * bulletForce, ForceMode.Impulse);
+				ammo--;
+				UIManager.instance.UpdateWeaponAmmoText(ammo);
 			}
 
 			GameObject s = Instantiate(shell, shellSpawn.position, shellSpawn.rotation) as GameObject;

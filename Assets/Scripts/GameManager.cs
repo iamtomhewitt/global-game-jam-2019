@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	ZombieSpawner zombieSpawner;
-
 	public static GameManager instance;
 
 	private void Awake()
@@ -16,22 +14,22 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
-		zombieSpawner = GameObject.FindObjectOfType<ZombieSpawner>();
-		zombieSpawner.SpawnWave();
+		ZombieSpawner.instance.SpawnWave();
 
 		InvokeRepeating("CheckToSpawnNextZombieWave", 2, 2);
 	}
 
 	private void CheckToSpawnNextZombieWave()
 	{
-		if (zombieSpawner.finishedSpawningWave)
+		if (ZombieSpawner.instance.finishedSpawningWave)
 		{
 			if (GameObject.FindGameObjectsWithTag("Zombie").Length == 0)
 			{
 				//print("Spawning a new wave from the Game Manager");
-				zombieSpawner.waveSize += 1;
-				zombieSpawner.spawnRate -= .15f;
-				zombieSpawner.SpawnWave();
+				ZombieSpawner.instance.waveSize += 3;
+				ZombieSpawner.instance.spawnRate -= .1f;
+				if (ZombieSpawner.instance.spawnRate < 0.75f) ZombieSpawner.instance.spawnRate = 0.75f
+				ZombieSpawner.instance.SpawnWave();
 			}
 			//else
 				//print("Cannot start the next wave as there are still zombies alive!");
