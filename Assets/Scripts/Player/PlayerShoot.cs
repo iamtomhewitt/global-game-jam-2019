@@ -27,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
 	private void Start()
 	{
 		muzzleFlash.SetActive(false);
-		currentWeapon = GetComponent<PlayerWeaponManager>().SwitchWeapon(startingWeapon);
+		setCurrentWeapon(startingWeapon);
 		rb = GetComponent<Rigidbody>();
 	}
 
@@ -40,5 +40,23 @@ public class PlayerShoot : MonoBehaviour
 			currentWeapon.Shoot();
 			rb.AddForce(-transform.forward * currentWeapon.recoil, ForceMode.Impulse);
 		}
+	}
+
+	public void setCurrentWeapon(string weaponName)
+	{
+		currentWeapon = GetComponent<PlayerWeaponManager>().SwitchWeapon(weaponName);
+	}
+
+	public void setCurrentWeaponForTime(string weaponName, float duration)
+	{
+		StopAllCoroutines();
+		StartCoroutine(setCurrentWeaponForDuration(weaponName, duration));
+	}
+
+	private IEnumerator setCurrentWeaponForDuration(string weaponName, float duration)
+	{
+		setCurrentWeapon(weaponName);
+		yield return new WaitForSeconds(duration);
+		setCurrentWeapon(startingWeapon);
 	}
 }
