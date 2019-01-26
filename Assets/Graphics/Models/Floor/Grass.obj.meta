@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: 8aad5a0c03641484a84a2e6363be3278
+guid: 08b18b5244f890b4fbbfd69b43d8ce0f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Grass_Road
-    400000: //RootNode
-    400002: Grass_Road
-    2100000: Grass_RoadMat
-    2300000: Grass_Road
-    3300000: Grass_Road
-    4300000: Grass_Road
-  externalObjects: {}
+    100000: Grass
+    100002: //RootNode
+    400000: Grass
+    400002: //RootNode
+    2100000: palette
+    2300000: Grass
+    3300000: Grass
+    4300000: Grass
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palette
+    second: {fileID: 2100000, guid: 2bf06dbcb86360a4395929de3b34a4ca, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -42,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -73,7 +78,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
