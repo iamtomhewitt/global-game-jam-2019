@@ -25,6 +25,8 @@ public class PlayerCollision : MonoBehaviour
 						break;
 				}
 
+				AudioManager.instance.Play("Weapon Pikup Collected");
+
 				Destroy(other.gameObject);
 				break;
 		}

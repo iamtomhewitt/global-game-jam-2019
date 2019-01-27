@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
 		{
 			case "Zombie":
 				DecreaseHealth(10);
+				AudioManager.instance.Play("Player Hit");
 				break;
 
 			default:

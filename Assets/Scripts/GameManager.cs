@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
+		AudioManager.instance.Play("Music");
 		ZombieSpawner.instance.SpawnWave();
 
 		InvokeRepeating("CheckToSpawnNextZombieWave", 2, 2);
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
 	{
 		UIManager.instance.ShowGameOver(reason);
 		ZombieSpawner.instance.StopAllCoroutines();
+		AudioManager.instance.Play("Game Over");
 
 		CancelInvoke("CheckToSpawnNextZombieWave");
 

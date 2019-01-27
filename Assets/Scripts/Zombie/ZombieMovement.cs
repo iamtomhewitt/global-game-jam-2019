@@ -15,6 +15,13 @@ public class ZombieMovement : MonoBehaviour
 	{
 		chasePlayer = (Random.value < 0.3f);
 		StartCoroutine(Initialise());
+		InvokeRepeating("Groan", 0f, Random.Range(20f, 60f));
+	}
+
+	private void Groan()
+	{
+		int i = Random.Range(1, 4);
+		AudioManager.instance.Play("Zombie " + i);
 	}
 
 	IEnumerator Initialise()
@@ -42,7 +49,6 @@ public class ZombieMovement : MonoBehaviour
 
 		if (chasePlayer)
 		{
-			print(transform.name + " is chasing Player");
 			InvokeRepeating("UpdateDestination", 0f, 0.5f);
 		}
 	}

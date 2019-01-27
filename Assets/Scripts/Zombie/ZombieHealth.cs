@@ -28,6 +28,7 @@ public class ZombieHealth : MonoBehaviour
 		{
 			case "Bullet":
 				DecreaseHealth(50, true);
+				AudioManager.instance.Play("Zombie Hit");
 				break;
 
 			case "Zombie Destination":
@@ -48,6 +49,8 @@ public class ZombieHealth : MonoBehaviour
 		Destroy(this.gameObject);
 
 		UIManager.instance.UpdateZombiesRemainingText();
+
+		AudioManager.instance.Play("Zombie Death");
 
 		if (killedByPlayer)
 		{

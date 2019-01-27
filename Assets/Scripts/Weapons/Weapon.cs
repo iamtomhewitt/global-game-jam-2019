@@ -21,6 +21,8 @@ public class Weapon : MonoBehaviour
 
 	public int ammo;
 
+	public string weaponFireSoundName;
+
 	private float cooldown;
 
 	public void Start()
@@ -40,6 +42,7 @@ public class Weapon : MonoBehaviour
 				GameObject b = Instantiate(bullet, spawn.position, spawn.rotation) as GameObject;
 				b.GetComponent<Rigidbody>().AddForce(b.transform.forward * bulletForce, ForceMode.Impulse);
 				ammo--;
+				AudioManager.instance.Play(weaponFireSoundName);
 				UIManager.instance.UpdateWeaponAmmoText(ammo);
 			}
 

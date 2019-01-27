@@ -198,6 +198,7 @@ MonoBehaviour:
   cameraShakeIntensity: 0.25
   cameraShakeDuration: 0.3
   ammo: 10000
+  weaponFireSoundName: Shotgun
 --- !u!1 &4254411624389573542
 GameObject:
   m_ObjectHideFlags: 0

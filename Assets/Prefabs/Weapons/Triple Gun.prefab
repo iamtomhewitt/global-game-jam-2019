@@ -122,6 +122,7 @@ MonoBehaviour:
   cameraShakeIntensity: 0.15
   cameraShakeDuration: 0.225
   ammo: 120
+  weaponFireSoundName: Triple Gun
 --- !u!1 &6551248831257474673
 GameObject:
   m_ObjectHideFlags: 0

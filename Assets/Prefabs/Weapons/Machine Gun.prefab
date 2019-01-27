@@ -215,6 +215,7 @@ MonoBehaviour:
   cameraShakeIntensity: 0.1
   cameraShakeDuration: 0.2
   ammo: 100
+  weaponFireSoundName: Machine Gun
 --- !u!1 &1757084251463112192
 GameObject:
   m_ObjectHideFlags: 0
