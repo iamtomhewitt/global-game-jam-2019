@@ -128,3 +128,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: House Attack
+    clip: {fileID: 8300000, guid: fba21b468646137459d1296dac3ae8c7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

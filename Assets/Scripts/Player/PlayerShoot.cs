@@ -41,7 +41,8 @@ public class PlayerShoot : MonoBehaviour
 		if (Input.GetAxis("RightTrigger") >= 0.95f && currentWeapon.GetCooldown() <= 0)
 		{
 			currentWeapon.Shoot();
-			rb.AddForce(-transform.forward * currentWeapon.recoil, ForceMode.Impulse);
+			if (currentWeapon.ammo > 0)
+				rb.AddForce(-transform.forward * currentWeapon.recoil, ForceMode.Impulse);
 		}
 
 		if (Input.GetButtonDown("YButton"))

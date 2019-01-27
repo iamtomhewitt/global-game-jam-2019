@@ -16,6 +16,8 @@ public class HouseHealth : MonoBehaviour
 
 		UIManager.instance.ShowHouseUnderAttack();
 
+		AudioManager.instance.Play("House Attack");
+
 		if (health <= 0)
 		{
 			Die();

@@ -32,6 +32,11 @@ public class Weapon : MonoBehaviour
 
 	public void Shoot()
 	{
+		if (ammo <= 0)
+		{
+			AudioManager.instance.Play("Weapon Empty");
+		}
+
 		if (cooldown <= 0f && ammo > 0)
 		{
 			StartCoroutine(MuzzleFlash());

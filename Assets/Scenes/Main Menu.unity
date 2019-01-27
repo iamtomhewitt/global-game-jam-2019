@@ -69656,6 +69656,7 @@ GameObject:
   - component: {fileID: 2090421700}
   - component: {fileID: 2090421699}
   - component: {fileID: 2090421702}
+  - component: {fileID: 2090421703}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -69736,6 +69737,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e512524da725d314cba637fa9e1297ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2090421703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090421698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 619.5, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &2096046119
 GameObject:
   m_ObjectHideFlags: 0
@@ -71131,35 +71154,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143742307}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &144864477695554650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460564550463391543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f49432aa93ab9640b6dea11223c897f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponName: Triple Gun
-  bullet: {fileID: 5906597570463850439, guid: 90fce440c758ec944a92dce55e0ae2fb, type: 3}
-  shell: {fileID: 6778363621578812072, guid: 0727985e18841bc4d91e73ad0ed49897, type: 3}
-  muzzleFlash: {fileID: 8969996534012326077}
-  bulletSpawns:
-  - {fileID: 3253691795991161750}
-  - {fileID: 6067033608693903981}
-  - {fileID: 4846841091471756876}
-  shellSpawn: {fileID: 8229021339584482351}
-  fireRate: 0.5
-  bulletForce: 50
-  shellForce: 6
-  recoil: 0
-  cameraShakeIntensity: 0.15
-  cameraShakeDuration: 0.225
-  ammo: 120
-  weaponFireSoundName: 
 --- !u!4 &159711546100169280
 Transform:
   m_ObjectHideFlags: 0
@@ -87168,14 +87162,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4285390395855413366}
-  - component: {fileID: 7152529694229279048}
   m_Layer: 0
   m_Name: Machine Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4285390395855413364
 Transform:
   m_ObjectHideFlags: 0
@@ -95581,33 +95574,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!114 &5524854332325335515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7986535205914485335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f49432aa93ab9640b6dea11223c897f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponName: Shotgun
-  bullet: {fileID: 5906597570463850439, guid: 90fce440c758ec944a92dce55e0ae2fb, type: 3}
-  shell: {fileID: 6778363621578812072, guid: 728f9ce07a14c0c4291244c00bfd5099, type: 3}
-  muzzleFlash: {fileID: 6133212651835931904}
-  bulletSpawns:
-  - {fileID: 6181513543603043685}
-  shellSpawn: {fileID: 6133212650514179084}
-  fireRate: 0.75
-  bulletForce: 40
-  shellForce: 5
-  recoil: 4
-  cameraShakeIntensity: 0.25
-  cameraShakeDuration: 0.3
-  ammo: 10000
-  weaponFireSoundName: 
 --- !u!1 &5584394995616708730
 GameObject:
   m_ObjectHideFlags: 0
@@ -105392,33 +105358,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7152529694229279048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4285390395855256662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f49432aa93ab9640b6dea11223c897f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponName: Machine Gun
-  bullet: {fileID: 5906597570463850439, guid: 90fce440c758ec944a92dce55e0ae2fb, type: 3}
-  shell: {fileID: 6778363621578812072, guid: 0727985e18841bc4d91e73ad0ed49897, type: 3}
-  muzzleFlash: {fileID: 4372726620743513122}
-  bulletSpawns:
-  - {fileID: 1979470467111001682}
-  shellSpawn: {fileID: 6278555041083043928}
-  fireRate: 0.1
-  bulletForce: 50
-  shellForce: 6
-  recoil: 0
-  cameraShakeIntensity: 0.1
-  cameraShakeDuration: 0.2
-  ammo: 100
-  weaponFireSoundName: 
 --- !u!1 &7214621495900969650
 GameObject:
   m_ObjectHideFlags: 0
@@ -105696,7 +105635,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7986535205914066551}
-  - component: {fileID: 5524854332325335515}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -105788,14 +105726,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 962370281250899471}
-  - component: {fileID: 144864477695554650}
   m_Layer: 0
   m_Name: Triple Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &8729726980680488428
 MeshRenderer:
   m_ObjectHideFlags: 0
