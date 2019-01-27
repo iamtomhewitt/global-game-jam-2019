@@ -46,9 +46,9 @@ public class GameManager : MonoBehaviour
 		SceneManager.LoadScene("Main Menu");
 	}
 
-	public void GameOver()
+	public void GameOver(string reason)
 	{
-		UIManager.instance.ShowGameOver();
+		UIManager.instance.ShowGameOver(reason);
 		ZombieSpawner.instance.StopAllCoroutines();
 
 		CancelInvoke("CheckToSpawnNextZombieWave");

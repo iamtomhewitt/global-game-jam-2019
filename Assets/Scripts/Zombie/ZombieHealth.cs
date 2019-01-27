@@ -32,7 +32,7 @@ public class ZombieHealth : MonoBehaviour
 
 			case "Zombie Destination":
 				DecreaseHealth(100, false);
-				other.gameObject.GetComponent<HouseHealth>().DecreaseHealth(5);
+				GameObject.FindObjectOfType<HouseHealth>().DecreaseHealth(5);
 				break;
 
 			default:

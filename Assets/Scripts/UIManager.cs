@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 	public TextMeshProUGUI zombiesRemainingText;
 	public TextMeshProUGUI weaponNameText;
 	public TextMeshProUGUI weaponAmmoText;
+	public TextMeshProUGUI gameOverText;
 
 	public static UIManager instance;
 
@@ -59,8 +60,9 @@ public class UIManager : MonoBehaviour
 		animator.Play(underAttack.name, -1, 0f);
 	}
 
-	public void ShowGameOver()
+	public void ShowGameOver(string reason)
 	{
+		gameOverText.SetText(reason);
 		animator.Play(gameOver.name, -1, 0f);
 	}
 }

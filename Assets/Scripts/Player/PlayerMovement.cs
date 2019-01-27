@@ -35,21 +35,12 @@ public class PlayerMovement : MonoBehaviour
 			transform.position += isometricRight * Time.deltaTime * moveSpeed * Input.GetAxis(leftStickVertical);
 			animationController.ChangeAnimation(PlayerAnimationController.ANIMATION_RUN);
 		}
-		//else
-		//{
-		//	float angle = (Mathf.Atan2(Input.GetAxis(leftStickHorizontal), -Input.GetAxis(leftStickVertical)) * Mathf.Rad2Deg) + rotationOffset;
-		//	transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(new Vector3(0f, -angle, 0)), rotationSpeed * Time.deltaTime);
-
-		//	animationController.ChangeAnimation(PlayerAnimationController.ANIMATION_RUN);
-		//}
 
 		if (IsRightJoystickInput())
 		{
 			float angle = (Mathf.Atan2(Input.GetAxis(rightStickHorizontal), Input.GetAxis(rightStickVertical)) * Mathf.Rad2Deg) + rotationOffset;
 			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(new Vector3(0f, -angle, 0)), rotationSpeed * Time.deltaTime);
-
-			//animationController.ChangeAnimation(PlayerAnimationController.ANIMATION_RUN);
-		}
+		}	
 	}
 
 	private bool IsLeftJoystickInput()

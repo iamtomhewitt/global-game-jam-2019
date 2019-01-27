@@ -41,6 +41,6 @@ public class PlayerHealth : MonoBehaviour
 		CameraController.instance.ShakeCamera(.25f, .15f);
 		Instantiate(deathEffect, transform.position, transform.rotation);
 		Destroy(this.gameObject);
-		GameManager.instance.GameOver();
+		GameManager.instance.GameOver("GAME OVER! YOU DIED!");
 	}
 }

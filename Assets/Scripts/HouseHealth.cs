@@ -24,6 +24,6 @@ public class HouseHealth : MonoBehaviour
 
 	private void Die()
 	{
-		print("GAME OVER!");
+		GameManager.instance.GameOver("GAME OVER! THE HOUSE WAS DESTROYED!");
 	}
 }
